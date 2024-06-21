@@ -8,7 +8,7 @@ const MainLayout = () => {
     <div className='w-full'>
       <TopHeader />
       <NavHeader />
-      <main className='mx-8 lg:mx-48'>
+      <main className='mx-8 md:mx-32'>
         <Outlet />
       </main>
       <Footer />

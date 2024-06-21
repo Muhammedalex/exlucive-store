@@ -4,3 +4,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+  
+.slick-slide > div {
+    margin: 0 20px; /* Adjust the margin to create space between rows */
+  }
+  
+  .slick-list {
+    margin: 0 -20px; /* Compensate for the padding to align the slides properly */
+  }
+  

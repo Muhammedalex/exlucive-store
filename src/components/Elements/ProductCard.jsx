@@ -4,9 +4,9 @@ import Hand from '../../assets/imgs/handps.png';
 import { Link } from 'react-router-dom';
 import Rating from './Rating';
 
-const ProductCard = ({discount=true}) => {
+const ProductCard = ({discount=true , item={} , key}) => {
   return (
-    <div className="flex flex-col items-start justify-start gap-4 rounded-md max-w-[270px] w-1/4 group">
+    <div key={key} className="flex flex-col items-start justify-start gap-4 rounded-md py-2 max-w-[270px] w-1/4 group">
       <div className="relative flex items-center justify-center p-3 rounded-md w-72 h-60 bg-search-bg">
         <img src={Hand} alt='product' />
         {discount && (
@@ -27,7 +27,7 @@ const ProductCard = ({discount=true}) => {
       <div className="flex flex-col items-start justify-start gap-2">
         <Link to='/'>
         <h3 className='text-[16px] font-sans font-medium text-black'>
-        HAVIT HV-G92 Gamepad
+        HAVIT HV-G92 Gamepad {item.title}
         </h3>
         </Link>
         <div className='flex items-center justify-start gap-3'>

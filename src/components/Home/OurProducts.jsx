@@ -15,11 +15,15 @@ const OurProducts = () => {
     { id: 3, title: "Item 3", price: "$370", discount: "-30%", image: "path/to/image3.jpg", rating: 4.5 },
     { id: 4, title: "Item 4", price: "$375", discount: "-25%", image: "path/to/image4.jpg", rating: 3.5 },
     { id: 5, title: "Item 5", price: "$375", discount: "-25%", image: "path/to/image4.jpg", rating: 3.5 },
-    { id: 6, title: "Item 5", price: "$375", discount: "-25%", image: "path/to/image4.jpg", rating: 3.5 },
-    { id: 7, title: "Item 5", price: "$375", discount: "-25%", image: "path/to/image4.jpg", rating: 3.5 },
-    { id: 8, title: "Item 5", price: "$375", discount: "-25%", image: "path/to/image4.jpg", rating: 3.5 },
-    { id: 9, title: "Item 5", price: "$375", discount: "-25%", image: "path/to/image4.jpg", rating: 3.5 },
-    { id: 10, title: "Item 5", price: "$375", discount: "-25%", image: "path/to/image4.jpg", rating: 3.5 },
+    { id: 6, title: "Item 6", price: "$375", discount: "-25%", image: "path/to/image4.jpg", rating: 3.5 },
+    { id: 7, title: "Item 7", price: "$375", discount: "-25%", image: "path/to/image4.jpg", rating: 3.5 },
+    { id: 8, title: "Item 8", price: "$375", discount: "-25%", image: "path/to/image4.jpg", rating: 3.5 },
+    { id: 9, title: "Item 9", price: "$375", discount: "-25%", image: "path/to/image4.jpg", rating: 3.5 },
+    { id: 10, title: "Item 10", price: "$375", discount: "-25%", image: "path/to/image4.jpg", rating: 3.5 },
+    { id: 11, title: "Item 11", price: "$375", discount: "-25%", image: "path/to/image4.jpg", rating: 3.5 },
+    { id: 12, title: "Item 12", price: "$375", discount: "-25%", image: "path/to/image4.jpg", rating: 3.5 },
+
+    // { id: 11, title: "Item 5", price: "$375", discount: "-25%", image: "path/to/image4.jpg", rating: 3.5 },
 
     // Add more items as needed
   ];
@@ -29,20 +33,19 @@ const OurProducts = () => {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow:4,
     slidesToScroll: 1,
     lazyLoad: true,
-    centerMode: false,
+    centerMode: true,
     nextArrow:<></>,
     prevArrow: <></>,
-    initialSlide: 0,
-    rows: 2,
-    slidesPerRow: 1,
+    // rows: 1,
+    // slidesPerRow: 4,
     responsive: [
         {
           breakpoint: 1200,
           settings: {
-            slidesToShow: 3,
+            slidesToShow: 4,
             slidesToScroll: 1,
           }
         },
@@ -63,6 +66,7 @@ const OurProducts = () => {
         {
           breakpoint: 480,
           settings: {
+            
             slidesToShow: 1,
             slidesToScroll: 1,
           }
@@ -81,12 +85,10 @@ const OurProducts = () => {
         slider={true}
         view={false}
         />
-      <Slider ref={sliderRef} className="p-5 mx-auto my-10 "   {...settings}>
+      <Slider ref={sliderRef} className="my-10 "   {...settings}>
       
-      {items.map((item) => (
-       <div key={item.id} className='flex justify-between'>
-        <ProductCard key={item.id} />
-       </div>
+      {items.map((item,i) => (
+        <ProductCard key={i} item={item} />
        ))}
      
      </Slider>
